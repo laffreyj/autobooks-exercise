@@ -1,0 +1,94 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+
+WebUI.openBrowser('https://staging.autobooks.co/pay/autobook-s')
+
+WebUI.sendKeys(findTestObject('firstName'), 'Josie')
+
+WebUI.sendKeys(findTestObject('lastName'), 'Laffrey')
+
+WebUI.sendKeys(findTestObject('email'), 'laffrey93@gmail.com')
+
+WebUI.sendKeys(findTestObject('company'), '1901 Group')
+
+WebUI.sendKeys(findTestObject('description'), 'Wow it\'s a description!')
+
+WebUI.sendKeys(findTestObject('paymentAmt'), '3.50')
+
+WebUI.click(findTestObject('paymentScheduleTypeSelect'), FailureHandling.STOP_ON_FAILURE)
+
+WebUI.click(findTestObject('recurringPaymnt'))
+
+WebUI.click(findTestObject('paymentFreqSel'))
+
+WebUI.click(findTestObject('monthlyPymtFreq'))
+
+WebUI.click(findTestObject('bankAcctTab'))
+
+WebUI.sendKeys(findTestObject('accountName'), 'Josie Laffrey')
+
+WebUI.click(findTestObject('accountType'))
+
+WebUI.click(findTestObject('checkingAcctType'))
+
+WebUI.click(findTestObject('busOrPersAcct'))
+
+WebUI.click(findTestObject('personlAcct'))
+
+WebUI.sendKeys(findTestObject('routingNum'), '072000805')
+
+WebUI.sendKeys(findTestObject('accountNum'), '12421424234234213')
+
+WebUI.sendKeys(findTestObject('confirmAcctNum'), '12421424234234213')
+
+WebUI.click(findTestObject('acceptTerms'))
+
+WebUI.click(findTestObject('sendPymtBtn'))
+
+WebUI.click(findTestObject('submitAnthrPymt'))
+
+WebUI.sendKeys(findTestObject('firstName'), 'Jimmy')
+
+WebUI.sendKeys(findTestObject('lastName'), 'John')
+
+WebUI.sendKeys(findTestObject('email'), 'john@email.com')
+
+WebUI.sendKeys(findTestObject('description'), 'Another description!')
+
+WebUI.sendKeys(findTestObject('paymentAmt'), '10.50')
+
+WebUI.click(findTestObject('paymentScheduleTypeSelect'))
+
+WebUI.click(findTestObject('oneTimePymnt'))
+
+WebUI.sendKeys(findTestObject('cardName'), 'Jimmy John')
+
+WebUI.sendKeys(findTestObject('cardNumber'), '5112000100000003')
+
+WebUI.sendKeys(findTestObject('cardExpMon'), '01')
+
+WebUI.sendKeys(findTestObject('cardExpYr'), '2027')
+
+WebUI.sendKeys(findTestObject('cardCCV'), '123')
+
+WebUI.sendKeys(findTestObject('zipCode'), '24740')
+
+WebUI.click(findTestObject('acceptTerms'))
+
+WebUI.click(findTestObject('sendPymtBtn'))
